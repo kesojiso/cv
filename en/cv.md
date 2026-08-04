@@ -66,6 +66,7 @@ Develop and operate KUMIKI, a cloud-based drone surveying service, as part of a 
 
 #### Redesign of a GPU Image-Processing Queueing Platform
 
+- Our service has a feature that creates 3D models from pictures customer uploaded.
 - The previous architecture accepted image-processing requests from the frontend and asynchronously launched GPU instances from the backend via AWS Lambda to execute the jobs.
 - When a GPU instance was unavailable, the Lambda function retried by invoking itself and repeatedly attempting to launch an instance. If GPU capacity was exhausted within the region, multiple Lambda invocations competed for EC2 instances, requiring manual recovery and incurring unnecessary charges from concurrent and recursive Lambda executions.
 - Served as the primary engineer for selecting the architecture and technologies and for designing and building a new queueing platform to resolve these issues.
