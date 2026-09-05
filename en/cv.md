@@ -64,54 +64,55 @@ In addition to this development experience, regularly uses English when collabor
 
 Develop and operate KUMIKI, a cloud-based drone surveying service, as part of a team of approximately 10. Work across AWS-based processing infrastructure, backend APIs, a React frontend, and production operations.
 
-#### Development of a GPU Image-Processing Queueing Platform
+#### Design and Implementation of an Asynchronous Processing Platform on AWS
 
-- Our service has a feature that creates 3D models from pictures customer uploaded.
-- The previous architecture accepted image-processing requests from the frontend and asynchronously launched GPU instances from the backend via AWS Lambda to execute the jobs.
-- When a GPU instance was unavailable, the Lambda function retried by invoking itself and repeatedly attempting to launch an instance. If GPU capacity was exhausted within the region, multiple Lambda invocations competed for EC2 instances, requiring manual recovery and incurring unnecessary charges from concurrent and recursive Lambda executions.
-- Served as the primary engineer for selecting the architecture and technologies and for designing and building a new queueing platform to resolve these issues.
-- Built a solution with AWS Batch that safely queues jobs when GPU instances are unavailable, searches for suitable alternative instance types, and resumes processing while preserving job priority and submission order.
-- As a result, manual recovery caused by GPU capacity shortages was almost eliminated, and costs from concurrent and recursive Lambda executions were reduced.
-- Introduced Terraform as the company's first use of the tool, enabling the environment to be reproduced and extended more easily in preparation for future multi-cloud deployment.
+- Designed and built a GPU image-processing platform for a cloud-based drone surveying service with nearly 10,000 registered users and approximately 30 image-processing requests per day on average.
+- The previous architecture used recursive Lambda invocations to retry when GPU instances were unavailable. During peak periods, stalled jobs required manual recovery approximately once per month, while concurrent Lambda invocations also incurred unnecessary execution costs.
+- Served as the primary engineer for architecture and technology selection, design, and implementation. Built an AWS Batch-based queueing platform that safely holds jobs until GPU instances become available, preserves job priority and submission order, and secures available GPU resources across multiple instance types.
+- Achieved zero manual recoveries caused by GPU capacity shortages in the approximately three months following deployment and reduced unnecessary costs from concurrent and recursive Lambda invocations.
+- Introduced Terraform as the company's first use of the tool in preparation for future multi-cloud deployment, managing the infrastructure as code so that it could be reproduced and extended more easily (Lambda functions were managed with AWS SAM).
 
 **Technologies:** AWS Lambda (Node.js), AWS Batch, Terraform, AWS SAM
 
-#### Refactoring of an Image-Processing API
+#### Design and Implementation of an Image Validation Microservice on AWS
 
-- The existing image-processing API combined multiple responsibilities, including invoking image-processing tasks and coordinating generated files. Tight coupling between processes made the system prone to defects.
-- Worked with the team to review the responsibility boundaries and decomposition strategy. Took ownership of separating key responsibilities and migrating the existing processing logic.
-- Transitioned incrementally to the new architecture, validating each processing unit to minimize the impact on existing users.
-- Added unit tests for the separated processes and integration tests spanning the API, image processing, and generated-file coordination, reducing defects.
+- Built a microservice that validates aerial-image metadata in real time to prevent downstream failures caused by unsuitable images.
+- Deployed a FastAPI server and a validation processing server as separate AWS Fargate tasks on Amazon ECS.
+- Used Amazon ElastiCache for Redis as both a job queue and a cache, separating the API server from the validation processing server.
+- Handled requirements definition, technology selection, AWS architecture, API design, implementation, and testing, meeting the requirement of responding within 10 seconds.
 
-**Technologies:** Python, REST API, Amazon S3
+**Technologies:** Python, FastAPI, Amazon ECS, AWS Fargate, Amazon ElastiCache for Redis
 
-#### Image Upload Validation Using Metadata
+#### Development of Coordinate Reference System Detection Across a Serverless API and Web UI
 
-- Developed a feature that validates aerial-image metadata in real time to prevent downstream failures caused by customers uploading unsuitable images.
-- Handled the full process, including requirements definition, technology selection, AWS architecture, API design, implementation, and testing.
-- Compared multiple infrastructure architectures and built a system that met the requirement of responding within 10 seconds without disrupting the user experience.
+- Developed a feature that determines the coordinate reference system of an aerial-image capture location in real time and presents it to the user as a candidate.
+- Implemented logic that searches pre-generated terrain polygons for the region containing the capture location and exposed it as an independent serverless API using AWS Lambda and a Lambda Function URL.
+- Implemented the complete flow in which React calls the Lambda API through the Laravel backend and displays the result as a candidate, taking ownership of the Lambda API, Laravel backend, and React frontend layers.
+- Eliminated the need for an external reverse-geocoding API, reducing API costs and improving detection accuracy.
 
-**Technologies:** Python, FastAPI, ECS on Fargate, Redis/Valkey
+**Technologies:** Python, AWS Lambda, Lambda Function URL, PHP, Laravel, React, GIS
 
-#### Monitoring Tools for Detecting Silent Failures
+#### Backend API Development in Laravel
 
-- Built multiple AWS Lambda monitoring tools to detect jobs that showed no progress for a specified period and failed to transition to a completed state.
-- Led the design and implementation of monitoring conditions, detection logic, the Lambda architecture, Slack notifications, and tests.
-- Enabled stalled processes with no explicit errors to trigger Slack notifications, allowing silent failures to be detected early without waiting for reports from users or internal staff.
+- Developed CRUD APIs for managing PDFs uploaded for display as layers on a map.
+- Handled API endpoint implementation in Laravel, MySQL schema changes and migrations, and testing.
 
-**Technologies:** AWS Lambda, Slack
+**Technologies:** PHP, Laravel, MySQL
 
-#### Production Incident Investigation, Recovery, and Permanent Remediation
+#### Refactoring of Terrain-Image Generation Processing in Python
 
-- When incidents occurred, such as files not being generated or processing stopping midway, analyzed application logs, processing states in the database, and generated files in Amazon S3 to identify the root cause.
-- Created temporary recovery procedures to reprocess affected data or restore missing generated files and return the service to an operational state.
-- Handled the entire response lifecycle, from root-cause investigation and temporary recovery through the design, implementation, and release of permanent fixes.
+- Technical debt had accumulated because the core terrain-generation logic was scattered throughout the processing workflow, with unclear responsibilities and dependencies, and some steps were executed even when unnecessary.
+- The team reviewed the responsibilities and execution order of each step. Took ownership of separating and repositioning key processes, removing unnecessary steps, and incrementally migrating from the existing workflow.
+- Added unit tests and integration tests covering the end-to-end workflow, making the system easier to maintain and modify.
 
-#### Automatic Coordinate Reference System Detection for Capture Locations
+**Technologies:** Python, Amazon S3
 
-- The previous system used services such as Google's Reverse Geocoding API to infer the coordinate reference system of a capture location from aerial-image location data. Implemented a process that searches pre-generated terrain polygons for the polygon containing the capture location and determines the coordinate reference system. This improved accuracy while eliminating external API costs.
+#### Production Operations and Monitoring Improvements
 
-**Technologies:** Python, AWS Lambda, GIS
+- **Silent failure detection:** Built a set of AWS Lambda monitoring tools that detect jobs with no progress for a specified period and notify the team through Slack. Led the design and implementation of the monitoring conditions, detection logic, notifications, and tests, enabling stalled jobs to be discovered without waiting for user reports.
+- **Production incident response:** Investigated incidents such as missing generated files and stalled processing by analyzing application logs, processing states in the database, and generated files in Amazon S3. Handled the full response lifecycle, from temporary recovery by reprocessing affected data or restoring missing files through the design, implementation, and release of permanent fixes.
+
+**Technologies:** AWS Lambda, Amazon S3, Slack
 
 #### Collaboration in English
 
