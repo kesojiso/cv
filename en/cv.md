@@ -6,14 +6,14 @@
 
 ## Personal Details
 
-| Field | Details |
-| --- | --- |
-| Name | Kenjin Nakaza (仲座 顕仁) |
-| Gender | Male |
-| Date of birth | July 5, 1994 (age 32) |
-| Address | 8-29-54 Hashimoto, Midori-ku, Sagamihara-shi, Kanagawa 252-0143, Japan |
-| Phone | 080-6491-7931 |
-| Email | nakaza.recruit@gmail.com |
+| Field         | Details                                                                |
+| ------------- | ---------------------------------------------------------------------- |
+| Name          | Kenjin Nakaza (仲座 顕仁)                                              |
+| Gender        | Male                                                                   |
+| Date of birth | July 5, 1994 (age 32)                                                  |
+| Address       | 8-29-54 Hashimoto, Midori-ku, Sagamihara-shi, Kanagawa 252-0143, Japan |
+| Phone         | 080-6491-7931                                                          |
+| Email         | nakaza.recruit@gmail.com                                               |
 
 ## Professional Summary
 
@@ -27,44 +27,44 @@ In addition to this development experience, regularly uses English when collabor
 
 ## Technical Skills
 
-| Area | Technologies |
-| --- | --- |
-| Programming languages | Python, TypeScript, PHP, Dart, SQL |
-| Runtime | Node.js |
-| Backend frameworks | FastAPI, Django, Laravel |
-| Frontend frameworks | React, Flutter |
-| AWS | S3, Lambda, EC2, ECS, Fargate, Batch, RDS, DynamoDB, ElastiCache, EMR, EKS |
-| Azure | App Service, OpenAI API |
-| GCP | Cloud Run, Vertex AI |
-| Firebase | Firestore, Cloud Functions |
-| Data processing and numerical computing | PySpark, pandas, NumPy |
-| Machine learning | scikit-learn, LightGBM, TensorFlow, YOLO |
-| Workflow and job management | Airflow, JP1 |
-| Databases and caching | PostgreSQL, MySQL, Redis |
-| Development and container platforms | Git, Docker |
-| Infrastructure as Code | Terraform, AWS SAM, CloudFormation |
-| Domains | GIS, recommendation systems, image recognition |
+| Area                                    | Technologies                                                     |
+| --------------------------------------- | ---------------------------------------------------------------- |
+| Programming languages                   | Python, TypeScript, PHP, Dart, SQL                               |
+| Runtime                                 | Node.js                                                          |
+| Backend frameworks                      | FastAPI, Django, Laravel                                         |
+| Frontend frameworks                     | React, Flutter                                                   |
+| AWS                                     | S3, Lambda, EC2, ECS, Fargate, Batch, RDS, DynamoDB, ElastiCache |
+| Azure                                   | App Service, OpenAI API                                          |
+| GCP                                     | Cloud Run, Vertex AI                                             |
+| Firebase                                | Firestore, Cloud Functions                                       |
+| Data processing and numerical computing | PySpark, pandas, NumPy                                           |
+| Machine learning                        | scikit-learn, LightGBM, TensorFlow, YOLO                         |
+| Workflow and job management             | Airflow, JP1                                                     |
+| Databases and caching                   | PostgreSQL, MySQL, Redis                                         |
+| Development and container platforms     | Git, Docker                                                      |
+| Infrastructure as Code                  | Terraform, AWS SAM, CloudFormation                               |
+| Domains                                 | GIS, recommendation systems, image recognition                   |
 
 ## Career History
 
-| Period | Employer |
-| --- | --- |
-| April 2019 – March 2022 | Keysight Technologies International Japan G.K. (left for personal reasons) |
-| April 2022 – November 2024 | ARISE analytics, Inc. (left for personal reasons) |
-| January 2025 – Present | SkymatiX, Inc. |
+| Period                     | Employer                                                                   |
+| -------------------------- | -------------------------------------------------------------------------- |
+| April 2019 – March 2022    | Keysight Technologies International Japan G.K. (left for personal reasons) |
+| April 2022 – November 2024 | ARISE analytics, Inc. (left for personal reasons)                          |
+| January 2025 – Present     | SkymatiX, Inc.                                                             |
 
 ## Professional Experience
 
 ### SkymatiX, Inc. — January 2025 to Present
 
-| Field | Details |
-| --- | --- |
-| Business | Planning, development, and sales of industrial remote-sensing services; education and training services |
-| Employment type | Full-time employee |
+| Field           | Details                                                                                                 |
+| --------------- | ------------------------------------------------------------------------------------------------------- |
+| Business        | Planning, development, and sales of industrial remote-sensing services; education and training services |
+| Employment type | Full-time employee                                                                                      |
 
 Develop and operate KUMIKI, a cloud-based drone surveying service, as part of a team of approximately 10. Work across AWS-based processing infrastructure, backend APIs, a React frontend, and production operations.
 
-#### Redesign of a GPU Image-Processing Queueing Platform
+#### Development of a GPU Image-Processing Queueing Platform
 
 - Our service has a feature that creates 3D models from pictures customer uploaded.
 - The previous architecture accepted image-processing requests from the frontend and asynchronously launched GPU instances from the backend via AWS Lambda to execute the jobs.
@@ -119,10 +119,10 @@ Develop and operate KUMIKI, a cloud-based drone surveying service, as part of a 
 
 ### ARISE analytics, Inc. — April 2022 to November 2024
 
-| Field | Details |
-| --- | --- |
-| Business | Analytics services, including data analysis, algorithm development, and support for implementing DMP, AI, and IoT solutions |
-| Employment type | Full-time employee |
+| Field           | Details                                                                                                                     |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Business        | Analytics services, including data analysis, algorithm development, and support for implementing DMP, AI, and IoT solutions |
+| Employment type | Full-time employee                                                                                                          |
 
 #### Development and Operation of a Recommendation System for a Major E-Commerce Platform (Team of Approximately 10)
 
@@ -132,7 +132,7 @@ Develop and operate KUMIKI, a cloud-based drone surveying service, as part of a 
 - Developed daily processing workflows covering data transformation, model training and inference, and recommendation-list generation.
 - Investigated root causes, reported incidents to the client, and restored service when production incidents occurred.
 
-**Technologies:** Python, PySpark, pandas, Airflow, Amazon S3, Amazon EC2, Amazon EMR, Amazon EKS
+**Technologies:** Python, PySpark, pandas, Apache Airflow, Amazon S3, Amazon EC2
 
 #### Development and Operation of Generative AI Web Applications (Team of Approximately 10)
 
@@ -165,10 +165,10 @@ Develop and operate KUMIKI, a cloud-based drone surveying service, as part of a 
 
 ### Keysight Technologies International Japan G.K. — April 2019 to March 2022
 
-| Field | Details |
-| --- | --- |
-| Business | Measurement instruments and solutions for markets including information and communications technology, aerospace and defense, and semiconductors |
-| Employment type | Full-time employee |
+| Field           | Details                                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Business        | Measurement instruments and solutions for markets including information and communications technology, aerospace and defense, and semiconductors |
+| Employment type | Full-time employee                                                                                                                               |
 
 #### Manufacturing Process Design and Product Management
 
@@ -196,13 +196,13 @@ Develop and operate KUMIKI, a cloud-based drone surveying service, as part of a 
 
 ## Education
 
-| Date | Education |
-| --- | --- |
-| April 2010 | Entered the General Studies Program, Okinawa Shogaku High School |
-| March 2013 | Graduated from the General Studies Program, Okinawa Shogaku High School |
-| April 2013 | Entered the Department of Mechanical Engineering and Intelligent Systems, Faculty of Informatics and Engineering, The University of Electro-Communications |
-| March 2017 | Graduated from the Department of Mechanical Engineering and Intelligent Systems, Faculty of Informatics and Engineering, The University of Electro-Communications |
-| April 2017 | Entered the Master's Program in Mechanical and Intelligent Systems Engineering, Graduate School of Informatics and Engineering, The University of Electro-Communications |
+| Date       | Education                                                                                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| April 2010 | Entered the General Studies Program, Okinawa Shogaku High School                                                                                                           |
+| March 2013 | Graduated from the General Studies Program, Okinawa Shogaku High School                                                                                                    |
+| April 2013 | Entered the Department of Mechanical Engineering and Intelligent Systems, Faculty of Informatics and Engineering, The University of Electro-Communications                 |
+| March 2017 | Graduated from the Department of Mechanical Engineering and Intelligent Systems, Faculty of Informatics and Engineering, The University of Electro-Communications          |
+| April 2017 | Entered the Master's Program in Mechanical and Intelligent Systems Engineering, Graduate School of Informatics and Engineering, The University of Electro-Communications   |
 | March 2019 | Completed the Master's Program in Mechanical and Intelligent Systems Engineering, Graduate School of Informatics and Engineering, The University of Electro-Communications |
 
 ## Licenses, Certifications, and Competition Results
@@ -216,11 +216,11 @@ Develop and operate KUMIKI, a cloud-based drone surveying service, as part of a 
 
 ## Additional Information
 
-| Field | Details |
-| --- | --- |
-| Motivation, personal statement, hobbies, and special skills | — |
-| Commute | Approximately 1 hour 30 minutes to central Tokyo |
-| Dependents (excluding spouse) | None |
-| Marital status | Married |
-| Spouse financially dependent on applicant | No |
-| Preferred employment conditions | In accordance with company policy |
+| Field                                                       | Details                                          |
+| ----------------------------------------------------------- | ------------------------------------------------ |
+| Motivation, personal statement, hobbies, and special skills | —                                                |
+| Commute                                                     | Approximately 1 hour 30 minutes to central Tokyo |
+| Dependents (excluding spouse)                               | None                                             |
+| Marital status                                              | Married                                          |
+| Spouse financially dependent on applicant                   | No                                               |
+| Preferred employment conditions                             | In accordance with company policy                |
